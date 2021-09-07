@@ -21,6 +21,12 @@ function setupCustomElements() {
 
 function setupCustomElement(t) {
   const name = t.id;
+  const _name = name.replace("-", "_");
+  const src = t.getAttribute("src")
+
+  let sourceFile = `//@ sourceURL=${name}`
+  if (src) sourceFile = `//@ sourceURL=${src}`
+
   customElements.define(name,
     class extends HTMLElement {
 
@@ -35,10 +41,12 @@ function setupCustomElement(t) {
       connectedCallback() {
         const shadowRoot = this.shadowRoot;
         const script = shadowRoot.querySelector("script[connected]")
-        if (script){
-          this.templateScript = new Function(script.innerText)
+        if (script){ 
+          const outerTemplate = `/* ${t.outerHTML} */`
+          const newScript = outerTemplate.replace(script.innerText, `*/ ${script.innerText} ${sourceFile} \n /*`)
+          this[_name] = eval(`[function ${_name}(){ ${newScript} }][0]`);
           script.remove();
-          this.templateScript();
+          this[_name]();
           
         }
         
