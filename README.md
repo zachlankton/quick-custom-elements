@@ -48,6 +48,7 @@ Quick Custom Elements was designed to be as small and light weight as possible w
 - [Attribute Changed](#attribute-changed)
 - [Event 'qce-loaded'](#event-qce-loaded)
 - [More Complete Example](#more-complete-example)
+- [Performance](#performance)
 
 .
   
