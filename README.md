@@ -367,4 +367,4 @@ The 'my-navbar' component listens for the 'my-section-started' event to dynamica
 ## Performance
 QCE has excellent page performance characteristics. Check out the [official docs](https://FCC-Tech-Doc-Project.zachlankton.repl.co) page from more info.
     
-![Lighthouse Peformance Report](qce-lighthouse.png)
+![Lighthouse Peformance Report](qce-lighthouse.PNG)
