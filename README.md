@@ -32,6 +32,18 @@ Quick Custom Elements was designed to be as small and light weight as possible w
   </body>
 ```
   
+## Jump to a Section
+  
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Basic Template](#basic-template)
+- [Template 'src' Attribute](#template-src-attriubte)
+- [Template Scripts](#template-scripts)
+- [Attribute Changed](#attribute-changed)
+- [Event 'qce-loaded'](#event-qce-loaded)
+- [More Complete Example](#more-complete-example)
+
+
 ## Installation
 Installation is very simple, just need to include the script at the bottom of your head tag or your body tag. Including in the head tag will help to reduce any flash of unstyled content and will help ensure your components are ready before the page renders, but will block rendering of the page. 
   
@@ -51,7 +63,7 @@ You can obtain the script source from this github repo.
   
 ```
   
-# Basic Template
+## Basic Template
 QCE uses template tag 'id' attribute as the name of the custom element. (Remember that custom elements need a '-' in them to be legal.) Slot Elements (including named slots) can be used just as you would expect. For more info read here: [Web Components | MDN](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
 
 QCE automatically attaches templates to the shadow DOM which gives us the power of scoped styles by default. See the code below and try it out in Repl.it to see it in action
@@ -80,7 +92,7 @@ QCE automatically attaches templates to the shadow DOM which gives us the power 
 ```
   
   
-# Template 'src' Attribute
+## Template 'src' Attribute
 As you can imagine, cluttering up your head tag with 1000's of lines of template tags will become unbearable. Luckily, QCE looks for template tags with the 'src' attribute and fetchs templates from separate files. This allows you to organize your code the way you want. 
   
 Keep in mind that templates loaded this way are loaded asynchronously. This means the component may not be ready before the page starts to render. To help with this QCE provides a 'qce-loaded' event that fires on the document once all templates are loaded.
@@ -128,7 +140,7 @@ Using the 'my-card' element from the previous example above we can separate the 
   
 ```
   
-# Template Scripts
+## Template Scripts
 In addition to styles, scripts can also be scoped to the template. Regular script tags in your template are in fact global as you might expect (and not recommended), but add a supported attribute to your script tag and QCE provides a scoped script for you. Complete with a working reference to "this", which is a reference to the specific instance of one of your custom elements attached to the DOM.
 
 QCE supports multiple script tags in a single template. You can hook into any of the [Custom Element Life Cycle Callbacks](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#using_the_lifecycle_callbacks) with a simple attribute on your script tag. QCE supports the following life cycle callbacks:
@@ -176,7 +188,7 @@ QCE supports multiple script tags in a single template. You can hook into any of
 ```
   
   
-# Attribute Changed
+## Attribute Changed
 The Attribute Changed life cycle callback can be helpful for giving your component dynamic attributes that control the functionality and appearance of your element. This lets you watch for changes on these attributes and respond to them.
   
 [Try in Repl.it](https://replit.com/@ZachLankton/QCE-Attribute-Changed)
