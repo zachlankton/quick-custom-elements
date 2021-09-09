@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Quick Custom Elements (QCE) is as simple as its name. It allows you to quickly and easily create custom HTML elements and components using browser supported built in <template> tags. No need to create a custom element class or write constructors or mess with attaching the shadowDOM. QCE does this for you.
+Quick Custom Elements (QCE) is as simple as its name. It allows you to quickly and easily create custom HTML elements and components using browser supported built in <template> tags. No need to create a custom element class or write constructors or mess with attaching the shadowDOM. QCE does this for you. [Click here for official docs](https://fcc-tech-doc-project.zachlankton.repl.co/)
 
 Quick Custom Elements was designed to be as small and light weight as possible while exposing the full power and features of Web Components Standards. This project was developed with these key features in mind:
 
