@@ -38,23 +38,22 @@
 				const shadow = this.attachShadow({
 					mode: 'open'
 				})
-				shadow.appendChild(templateContent.cloneNode(true));
-
-				const shadowRoot = this.shadowRoot;
-				const scriptConstructor = shadowRoot.querySelector("script[constructor]")
-				const scriptConnected = shadowRoot.querySelector("script[connected]")
-				const scriptDisconnected = shadowRoot.querySelector("script[disconnected]")
-				const scriptAdopted = shadowRoot.querySelector("script[adopted]")
-				const scriptAttributeChange = shadowRoot.querySelector("script[attribute-changed]")
-
+				const x = templateContent.cloneNode(true);
+				
+				const scriptConstructor = x.querySelector("script[constructor]")
+				const scriptConnected = x.querySelector("script[connected]")
+				const scriptDisconnected = x.querySelector("script[disconnected]")
+				const scriptAdopted = x.querySelector("script[adopted]")
+				const scriptAttributeChange = x.querySelector("script[attribute-changed]")
+				
 				if (scriptConstructor) this.qce_constructor = prepareScript(scriptConstructor)
 				if (scriptConnected) this.qce_connected = prepareScript(scriptConnected)
 				if (scriptDisconnected) this.qce_disconnected = prepareScript(scriptDisconnected)
 				if (scriptAdopted) this.qce_adopted = prepareScript(scriptAdopted)
 				if (scriptAttributeChange) this.qce_attr_changed = prepareScript(scriptAttributeChange, "attributeName, oldValue, newValue")
-
+				
+				shadow.appendChild(x);
 				this.qce_constructor && this.qce_constructor()
-
 			}
 			connectedCallback() {
 				this.qce_connected && this.qce_connected();
